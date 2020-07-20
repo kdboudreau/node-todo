@@ -1,0 +1,25 @@
+{
+  "name": "node-todo",
+  "version": "1.0.0",
+  "description": "\"# node-todo\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdboudreau/node-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdboudreau/node-todo/issues"
+  },
+  "homepage": "https://github.com/kdboudreau/node-todo#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25"
+  }
+}
