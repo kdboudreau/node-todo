@@ -21,4 +21,28 @@ module.exports = function(app) {
         });
     });
 
+    app.post('/api/todo', function(req, resp) {
+        if (req.body.id) {
+            Todos.findByIdAndUpdate(req.body.id, {
+                    todo: req.body.todo, 
+                    isDone: req.body.isDone,
+                    hasAttachment: req.body.hasAttachment 
+                },
+                function(err, todo) {
+                    if (err) throw err;
+                    resp.send('Success');
+                })
+        } else {
+            var newTodo = Todos({
+                username: 'user1',
+                todo: req.body.todo,
+                isDone: req.body.isDone,
+                hasAttachment: req.body.hasAttachment
+            });
+            newTodo.save(function(err) {
+                resp.send('Success');
+            });
+        }
+    });
+
 }
