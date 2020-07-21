@@ -40,9 +40,16 @@ module.exports = function(app) {
                 hasAttachment: req.body.hasAttachment
             });
             newTodo.save(function(err) {
+                if (err) throw err;
                 resp.send('Success');
             });
         }
     });
 
+    app.delete('/api/todo', function(req, resp) {
+        Todos.findByIdAndRemove(req.body.id, function(err) {
+            if (err) throw err;
+            resp.send('Success');
+        });
+    });
 }
